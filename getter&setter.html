@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class squre{
+        constructor(width) {
+            this.width=width;
+            this.height=width;
+        }
+        //area() ohoma tibboth property widihata gnne
+        get area()
+        {
+            return this.height * this.width;
+        }
+        set area(area)
+        {
+            this.width=Math.sqrt(area);
+            this.height=Math.sqrt(area);
+        }
+    }
+    let s1=new squre(5);
+    console.log(s1.area);
+    s1.height=4;
+    console.log(s1.area);
+    s1.area=64;
+    console.log(s1.width);
+
+</script>
+
+</body>
+</html>

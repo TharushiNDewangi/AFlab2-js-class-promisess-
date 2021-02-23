@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>question 4</title>
+</head>
+<body>
+<script>
+
+    let callbacks=function (value)
+    {
+        console.log(value);
+    };
+    function getValue(callback){
+        let value = 0;
+        return new Promise(function (resolve,reject)
+        {
+            setTimeout(function(){
+
+                value = 10;
+                resolve(value);
+
+            },1000);
+        });
+
+    };
+    async function print()
+    {
+        let valus = await getValue();
+        //return karanne natuwa methanma print karannath
+        //pluwn
+        //console.log(value);
+        return valus;
+    }
+    print().then(function (value)
+    {
+        console.log(value);
+    })
+
+   // getValue().then(function (value){
+     //   console.log(value);
+    //}).catch(err=>console.log('dew'));
+    //console.log('dew');
+
+
+</script>
+
+</body>
+</html>

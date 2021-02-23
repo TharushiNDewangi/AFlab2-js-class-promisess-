@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>question 5</title>
+</head>
+<body>
+<script>
+    //Create a class named Vehicle using a function.
+    //Increase the number of VehicleCount
+    // (Vehicle.VehicleCount++) by one inside the
+    //constructor.
+    //Add a function to its prototype
+    // named drive (Vehicle.prototype.print...). Print
+    //‘Vehicle is
+    //driving’ in the function body.
+    //Create an object from Vehicle class
+    // (new Vehicle) and check static variable value,
+    //type
+    //property value and function work.
+    //Create a class named Car and extend the class Vehicle
+    // //(Car.prototype =
+    //Object.create(Vehicle.prototype);
+    // Car.prototype.constructor = Car).
+
+    class vehicle
+    {
+
+        static VehicleCount=0;
+        constructor(type) {
+            this.type=type;
+            vehicle.VehicleCount++;
+        }
+        print()
+        {
+            console.log("vehicle is driving")
+            console.log(vehicle.VehicleCount)
+        }
+
+    }
+
+    let van =new vehicle('van');
+    van.print();
+    class car extends vehicle
+    {
+        constructor()
+        {
+            super();
+
+        }
+        wheelbalance()
+        {
+            console.log("wheel");
+        }
+    }
+    let toyota =new car('toyota');
+    toyota.print();
+    toyota.wheelbalance();
+
+</script>
+</body>
+</html>

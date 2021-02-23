@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function vehicle(type)
+    {
+        //static VehicleCount=0;
+
+            this.type=type;
+            vehicle.VehicleCount++;
+
+
+    }
+
+
+    vehicle.prototype.print= function ()
+    {
+        console.log(this.type+"vehicle is driving")
+        console.log(vehicle.VehicleCount)
+    }
+    vehicle.VehicleCount=0;
+
+    console.log(vehicle.VehicleCount)
+    const van =new vehicle('van');
+    //car.print();
+    console.log(vehicle.VehicleCount)
+    console.log(vehicle.type)
+
+    function car(type)
+    {
+        vehicle.call(this,type);
+    }
+
+    //aconst car =new vehicle();
+    car.prototype = Object.create(vehicle.prototype);
+    car.prototype.constructor = car;
+
+    car.prototype.balancewheel = function()
+    {
+        console.log('wheel are balanced')
+    }
+    const obcar = new car('toyota');
+    obcar.print();
+    car.balancewheel();
+
+
+</script>
+</body>
+</html>

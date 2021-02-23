@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 2</title>
+</head>
+<body>
+<script>
+
+    class vehicle
+    {
+        static VehicleCount=0;
+        constructor(type) {
+            this.type=type;
+
+            vehicle.VehicleCount++;
+        }
+
+    }
+    class car
+    {
+        constructor(type) {
+            this.type=type;
+
+            vehicle.VehicleCount++;
+        }
+    }
+    vehicle.prototype.print= function ()
+    {
+        console.log("vehicle is driving")
+        console.log(vehicle.VehicleCount)
+    }
+    const van =new vehicle('car');
+    car.print();
+
+    const car =new vehicle();
+    car.prototype = Object.create(vehicle.prototype);
+    car.prototype.constructor = car;
+
+</script>
+</body>
+</html>

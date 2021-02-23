@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1. Promises/Asynchronous and callbacks
+    //• Create a function
+    //that returns a value after 1 second (return inside
+    // a setTimeout).
+    let callbacks=function (value)
+    {
+        console.log(value);
+    };
+    function getValue(callback){
+        let value = 0;
+        return new Promise(function (resolve,reject)
+        {
+            setTimeout(function(){
+                //console.log('excute after 1 sec');
+                value = 10;
+                resolve(value);
+                //console.log(value);
+            },1000);
+        });
+
+        //return value;
+    };
+    //Pass a callback (function) to the function created in
+    // the previous step and execute that
+    //function inside the timeout by passing the value.
+    //console.log('run');
+    getValue().then(function (value){
+        console.log(value);
+        return value+100;
+    }).then(function (value)
+    {
+        console.log(value);
+        return value+100;
+    }).then(function (value)
+    {
+        console.log(value);
+        return value+100;
+    }).catch(err=>console.log('dew'));
+    console.log('dew');
+
+
+</script>
+</body>
+</html>
